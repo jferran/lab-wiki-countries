@@ -17,7 +17,12 @@ function CountryDetails({countryList}) {
         <h1>{foundCountry.name.common}</h1>
         <table className='table'>
             <thead></thead>
-                <img src={`https://flagpedia.net/data/flags/w580/${foundCountry.alpha2Code.toLowerCase()}.webp`} alt='' />
+            <tbody>
+                <tr>
+                    <td>
+                        <img src={`https://flagpedia.net/data/flags/w580/${foundCountry.alpha2Code.toLowerCase()}.webp`} alt='' />
+                    </td>
+                </tr>
                 <tr>
                     <td style={{width: '30%'}}>Capital</td>
                     <td>{foundCountry.capital}</td>
@@ -30,10 +35,11 @@ function CountryDetails({countryList}) {
                     <td>Borders</td>
                     <td>
                         <ul>
-                        {borderCountries.map((country)=> (<li><Link to={`/${country.alpha3Code}`}>{country.name.common}</Link></li>))}
+                        {borderCountries.map((country)=> (<li key={country.alpha3Code}><Link to={`/${country.alpha3Code}`}>{country.name.common}</Link></li>))}
                         </ul>
                     </td>
                 </tr>
+            </tbody>
         </table>
     </div>
   )

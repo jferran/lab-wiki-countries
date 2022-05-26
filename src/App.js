@@ -36,10 +36,11 @@ function App() {
     <div className="App">
       <Navbar/>
       
-      <div class="container">
-        <div class="row">
+      <div className="container">
+        <div className="row">
           <CountriesList countryList={countryList}/>
           <Routes>
+            <Route path={'/'} element={null}/>
             <Route path={'/:id'} element={<CountryDetails countryList={countryList}/>}/>
           </Routes>
         </div>
