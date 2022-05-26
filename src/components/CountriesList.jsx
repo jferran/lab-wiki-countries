@@ -8,7 +8,7 @@ function CountriesList({countryList}) {
             return (
                 <li key={country.alpha3Code}>
                     <img src={`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`} alt=''/>
-                    <Link to={`/${country.alpha3Code}`}>{country.name.common}</Link>
+                    <Link to={`/${country.alpha3Code}`} countryList={countryList}>{country.name.common}</Link>
                 </li>
             )
             })
