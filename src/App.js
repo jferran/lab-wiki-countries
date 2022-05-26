@@ -38,7 +38,7 @@ function App() {
       <CountriesList countryList={countryList}/>
 
       <Routes>
-        <Route path={'/:id'} element={<CountryDetails />}/>
+        <Route path={'/:id'} element={<CountryDetails countryList={countryList}/>}/>
       </Routes>
     </div>
   );

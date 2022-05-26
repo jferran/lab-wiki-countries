@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom';
-import countryList from '../countries.json'
+//import countryList from '../countries.json'
 
-function CountryDetails() {
+function CountryDetails({countryList}) {
     const {id}=useParams();
     const foundCountry = countryList.find((element)=>{
         return (element.alpha3Code === id)
