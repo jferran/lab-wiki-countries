@@ -13,14 +13,28 @@ function CountryDetails({countryList}) {
     )
     
   return (
-    <div>
-        <h1>CountryDetails</h1>
-        <img src={`https://flagpedia.net/data/flags/w580/${foundCountry.alpha2Code.toLowerCase()}.webp`} alt='' />
-        <p>Capital: {foundCountry.capital}</p>
-        <p>Area: {foundCountry.area }</p>
-        <p>Borders: {borderCountries.map((country)=> (<li><Link to={`/${country.alpha3Code}`}>{country.name.common}</Link></li>))}</p>
-        { foundCountry.name.common }
-
+    <div className='col-7'>
+        <h1>{foundCountry.name.common}</h1>
+        <table className='table'>
+            <thead></thead>
+                <img src={`https://flagpedia.net/data/flags/w580/${foundCountry.alpha2Code.toLowerCase()}.webp`} alt='' />
+                <tr>
+                    <td style={{width: '30%'}}>Capital</td>
+                    <td>{foundCountry.capital}</td>
+                </tr>
+                <tr>
+                    <td>Area</td>
+                    <td>{foundCountry.area } km <sup>2</sup></td>
+                </tr>
+                <tr>
+                    <td>Borders</td>
+                    <td>
+                        <ul>
+                        {borderCountries.map((country)=> (<li><Link to={`/${country.alpha3Code}`}>{country.name.common}</Link></li>))}
+                        </ul>
+                    </td>
+                </tr>
+        </table>
     </div>
   )
 }

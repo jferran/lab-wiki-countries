@@ -35,11 +35,15 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <CountriesList countryList={countryList}/>
-
-      <Routes>
-        <Route path={'/:id'} element={<CountryDetails countryList={countryList}/>}/>
-      </Routes>
+      
+      <div class="container">
+        <div class="row">
+          <CountriesList countryList={countryList}/>
+          <Routes>
+            <Route path={'/:id'} element={<CountryDetails countryList={countryList}/>}/>
+          </Routes>
+        </div>
+      </div>
     </div>
   );
 }
