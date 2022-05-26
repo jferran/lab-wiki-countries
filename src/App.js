@@ -4,16 +4,16 @@ import './App.css';
 import CountriesList from './components/CountriesList';
 import CountryDetails from './components/CountryDetails';
 import Navbar from './components/Navbar';
+import countryList from './countries.json'
 
 function App() {
   return (
     <div className="App">
       <Navbar/>
-      <CountriesList/>
+      <CountriesList countryList={countryList}/>
 
       <Routes>
-        <Route path={'/:id'} element={<CountryDetails/>}/>
-
+        <Route path={'/:id'} element={<CountryDetails />}/>
       </Routes>
     </div>
   );
