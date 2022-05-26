@@ -11,7 +11,7 @@ function CountriesList({countryList}) {
                 return (
                     <a key={country.alpha3Code} className="list-group-item list-group-item-action">
                         <img src={`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`} alt=''/>
-                        <Link to={`/${country.alpha3Code}`} countryList={countryList}>{country.name.common}</Link>
+                        <Link to={`/${country.alpha3Code}`}>{country.name.common}</Link>
                     </a>
                 )
                 })
